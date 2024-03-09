@@ -1,0 +1,35 @@
+<%- include('partials/_header') %>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card1">
+                <h2 class="text-center">Actualizar Estudiante </h2>
+                <div class="card-body-vista">
+                    <form action="/update/<%= data.id %>" method="post">
+
+                        <div class="form-group">
+                            <input type="text" name="cedula" value="<%= data.cedula%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nombre"  value="<%= data.nombre%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="apellidos" value="<%= data.apellidos%>"  class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <select name="grupo" class="form-control">
+                                <option value="">Seleccione</option>
+                                <% for (var i = 'a'.charCodeAt(0); i <= 'z'.charCodeAt(0); i++) { %>
+                                    <option value="<%= String.fromCharCode(i) %>" <% if (data.grupo === String.fromCharCode(i)) { %> selected <% } %>><%= String.fromCharCode(i) %></option>
+                                <% } %>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="display: block; margin: 0 auto; background-color: rgb(206, 153, 206); color: white;">GUARDAR CAMBIOS</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('partials/_footer') %>

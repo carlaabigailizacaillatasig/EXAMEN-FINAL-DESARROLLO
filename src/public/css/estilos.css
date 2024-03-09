@@ -1,0 +1,92 @@
+/*tabla registro */
+
+body {
+    background-color: rgb(188, 212, 243);
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/*titulo*/
+.card {
+
+    text-align: center;
+    width: 300px; 
+    padding: 2px; 
+    margin: 50px; 
+    font-size: 14px;
+    position: relative; 
+    top: -100px;
+}
+.card h2 {
+    color: rgb(4, 1, 38); /* Cambia el color del texto */
+    margin: 10px;
+
+}
+
+h2 {
+    margin-top: 10; 
+    margin-bottom: 20px; 
+}
+
+.btn-primary {
+    background-color: rgb(226, 149, 220);
+    display: block;
+    margin: 20px auto;
+}
+
+/*tabla guardar datos */
+.table {
+    margin: 50px; 
+    width: 80%;
+    font-size: 14px;
+    position: relative; 
+    top: -200px; 
+}
+
+.table th,
+.table td {
+    max-width: 1000px; 
+}
+
+.table th {
+    background-color: rgb(198, 183, 218); /* Color celeste para los títulos */
+    text-align: center; /* Centrar el texto dentro de los títulos */
+}
+
+.btn-danger,
+.btn-info {
+    width: 130px; 
+    height: 40px; 
+    display: inline-block; 
+    text-align: center; 
+    line-height: 40px;
+    margin:  5px;
+}
+
+
+/* Color para los botones */
+.btn-danger{
+
+background-color: rgb(219, 107, 219);
+
+}
+.btn-info {
+
+background-color: rgb(123, 210, 228);
+
+}
+
+
+
+.btn-primary1 {
+    background-color: green; /* Cambia el color del botón a verde */
+    color: white; /* Cambia el color del texto a blanco */
+    display: block; /* Hace que el botón sea un bloque para poder centrarlo */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    width: 50%; /* Establece el ancho del botón al 50% del contenedor padre */
+}

@@ -1,0 +1,78 @@
+<%- include('partials/_header') %>
+
+<div class="container1">
+    <div class="card">
+        <h2>Registrar Estudiantes</h2>
+        <div class="card-body">
+            <form action="/add" method="post">
+
+                <div class="form-group">
+                    <input type="text" name="cedula" placeholder="cedula" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="nombre" placeholder="nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="apellidos" placeholder="apellidos" class="form-control">
+                </div>
+                <div class="form-group">
+                    <select name="grupo" class="form-control" id="grupoSelect">
+                        <option value="">Seleccione</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>n°</th>
+                <th>cedula</th>
+                <th>nombre</th>
+                <th>apellidos</th>
+                <th>grupo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (data) { %>
+                <% for (var i = 0; i < data.length; i++) { %>
+                    <tr>
+                        <td><%= (i + 1) %></td>
+                        <td><%=data[i].cedula%></td>
+                        <td><%=data[i].nombre%></td>
+                        <td><%=data[i].apellidos%></td>
+                        <td><%=data[i].grupo%></td>
+                        <td>
+                            <a href="/delete/<%= data[i].id %>" class="btn btn-danger">ELIMINAR</a>
+                            <a href="/update/<%= data[i].id %>" class="btn btn-info">ACTUALIZAR</a>
+
+                        </td>
+                    </tr>
+                <% } %>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('partials/_footer') %>
+
+<script>
+
+    var select = document.getElementById("grupoSelect");
+
+    // Generar opciones desde a.b.c.d hasta z
+    for (var i = 'a'.charCodeAt(0); i <= 'z'.charCodeAt(0); i++) {
+        var option = document.createElement("option");
+        option.value = String.fromCharCode(i);
+        option.text = String.fromCharCode(i);
+        select.appendChild(option);
+    }
+</script>
